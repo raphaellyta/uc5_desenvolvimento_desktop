@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <!-- <link rel="stylesheet" href=""> -->
+  
+
+ <style>
+
+ </style>
+
+
+
+</head>
+<body>
+    <h1>HELLO WORLD!</h1>
+
+    <label for="Nome"> Nome:</label>
+    <input type="text" id = "nome" placeholder=" Adicione seu nome ">
+    <button id="botao" onclick="pegarnome()">Enviar</button>
+    <br><br>
+
+
+    <label for="Numero"> Numero:</label>
+    <input type="text" id = "Numero" placeholder="Adicione a sua numeração" >
+    <button id="botao" onclick="pegarnome2()">Enviar</button>
+    <br><br>
+  
+    <P id="texto2"> </P>
+    <br>
+   
+    <!-- //<script>src = funcao.js</script> -->
+    <script>
+    function pegarnome(){
+        let conteudo = document.getElementById('nome').value
+        alert(`Olá ${conteudo}`)
+        // document.getElementById('nome').value =""
+        // document.getElementById('texto').innerHTML = `olá ${conteudo}!!!`
+
+
+          }
+
+
+        function pegarnome2(){
+        let conteudo = document.getElementById('Numero').value
+      
+        if(conteudo>0){
+            document.getElementById('texto2').innerHTML = 'POSITIVO'
+        }else{
+            document.getElementById('texto2').innerHTML = 'NEGATIVO'
+        }
+
+
+        // alert(`Olá ${conteudo}`)
+        // document.getElementById('Numero').value =""
+        // document.getElementById('texto').innerHTML = `olá ${conteudo}!!!`
+
+    }
+
+    </script>
+
+    <br>
+</body>
+</html>
