@@ -35,21 +35,37 @@
 <body>
     <h1>HELLO WORLD!</h1>
 
-    <label for="Nome"> Nome:</label>
+    <!-- <label for="Nome"> Nome:</label>
     <input type="text" id = "nome" placeholder=" Adicione seu nome ">
     <button id="botao" onclick="pegarnome()">Enviar</button>
-    <br><br>
+    <br><br> -->
 
 
     <label for="Numero"> Numero:</label>
     <input type="text" id = "Numero" placeholder="Adicione a sua numeração" >
-    <button id="botao" onclick="pegarnome2()">Enviar</button>
+    <button id="botao" onclick='pegarnome2()'>Enviar</button>
     <br><br>
+
+    <button id = "novoteste" onclick='parImpar()'> Par ou Ímpar</button>
+
+    <br><br>
+
+    <label for="Nota1 "> Nota 1</label>
+    <input type="text" id = "Nota1" placeholder="Informe a primeira nota" >
+    <label for="Nota2"> Nota 2</label>
+    <input type="text" id="Nota2" placeholder="Informe a segunda nota">
+    <button id="" onclick='calcular_nota()'> Calcular</button>
+
+    <br><br>
+
   
     <P id="texto2"> </P>
+    <p id ="texto3"></p>
+    <p id="texto4"></p>
     <br>
    
     <!-- //<script>src = funcao.js</script> -->
+    
     <script>
     function pegarnome(){
         let conteudo = document.getElementById('nome').value
@@ -69,13 +85,41 @@
         }else{
             document.getElementById('texto2').innerHTML = 'NEGATIVO'
         }
+    }
+
+        function parImpar(){
+     
+            let n  = document.getElementById('Numero').value
+
+            if( n % 2 === 0 ){
+                document.getElementById('texto3').innerHTML = 'Número Par'
+            }else{
+
+                document.getElementById('texto3').innerHTML = 'Número Ímpar'
+            }
+        }
+
+
+        function calcular_nota(){
+         
+            let nota1 = document.getElementById('Nota1').value*0.4
+            let nota2 = document.getElementById('Nota2').value*0.6
+            let media = document.getElementById('texto4').innerHTML = (nota1+nota2).toFixed(2)
+
+            
+
+
+
+        }
+
+
 
 
         // alert(`Olá ${conteudo}`)
         // document.getElementById('Numero').value =""
         // document.getElementById('texto').innerHTML = `olá ${conteudo}!!!`
 
-    }
+    
 
     </script>
 
