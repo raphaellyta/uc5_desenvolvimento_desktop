@@ -48,17 +48,17 @@
     <br><br>
 
   <P id="valor1"> </P>
-  <p id = "valor2"></p>
+  <p id = ""></p>
 
   <script>
     function conversor_dolar(){
 
-        let dolar = document.getElementById('Valor_real')
+        let dolar = Number (document.getElementById('Valor_real').value)
            if( dolar === ""){
                 alert('Campo em branco! Digite um valor')
                 return false
             }
-            let calculo = document.getElementById('valor1').innerHTML = Valor_real*5.424 
+            document.getElementById("valor1").innerHTML = `Resultado:  ${(dolar*5.424)}`
             
     }
 
