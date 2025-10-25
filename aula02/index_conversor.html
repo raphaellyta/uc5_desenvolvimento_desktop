@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+   
+
+   body{
+
+    background-color: honeydew
+    
+   }
+
+   label{
+    font-size: small; font-style: oblique; font-weight: 200;
+   }
+
+   button{
+    border-radius: 10px;
+   }
+  input{
+    border-radius: 10px;
+   }
+
+
+    </style>
+</head>
+
+<body>
+
+    <H1>CONVERSOR DE MOEDAS</H1>
+
+    <label for="Valor_real"> Insira o valor :  </label>
+    <input type="text" id="Valor_real" placeholder=" Digite o valor em Real">
+    <br><br>
+    <button id="botao_dolar" onclick='conversor_dolar()'> Dolar</button>
+    <button id="botao_euro" onclick='conversor_euro()'> Euro</button>
+    <button id="botao_peso" onclick='conversor_peso()'> Peso</button>
+    <button id="botao_libra" onclick='conversor_libra()'> Libra</button>
+    <button id="botao_franco" onclick='conversor_franco()'> Franco</button>
+
+
+
+
+    <br><br>
+
+  <P id="valor1"> </P>
+  <p id = "valor2"></p>
+
+  <script>
+    function conversor_dolar(){
+
+        let dolar = document.getElementById('Valor_real')
+           if( dolar === ""){
+                alert('Campo em branco! Digite um valor')
+                return false
+            }
+            let calculo = document.getElementById('valor1').innerHTML = Valor_real*5.424 
+            
+    }
+
+     function conversor_euro(){
+
+        let euro = document.getElementById('valor2').value*6.353
+        
+
+    }
+
+      function conversor_peso(){
+
+    }
+
+     function conversor_libra(){
+
+    }
+
+     function conversor_franco(){
+
+    }
+
+
+
+
+
+
+
+  </script>
+
+
+
+    
+</body>
+</html>

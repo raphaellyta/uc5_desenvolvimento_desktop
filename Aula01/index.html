@@ -58,10 +58,19 @@
 
     <br><br>
 
+    <label for="celsius">Celsius</label>
+    <input type="text" id ="celsius" placeholder="Digite a temperatura em Celsius ">
+    <br><br>
+     <button id="botao_Fahrenheit" onclick="cal_Fahrenheit()">Fahrenheit</button>
+    <button id="botao_Kelvin" onclick="cal_Kelvin()">Kelvin</button>
+    
+
+     <br><br>
   
     <P id="texto2"> </P>
     <p id ="texto3"></p>
     <p id="texto4"></p>
+    <p id="texto5"></p>
     <br>
    
     <!-- //<script>src = funcao.js</script> -->
@@ -109,6 +118,34 @@
             
 
 
+
+        }
+
+
+        function cal_Fahrenheit(){
+
+            let fah = document.getElementById('celsius').value
+
+            if(fah ===""){
+                alert('Campo em branco! Digite um valor ')
+                      return false
+            }
+
+            let calculo = document.getElementById('texto5').innerHTML =  (cel*9/5) + 273.32
+        
+
+
+        }
+
+
+        function cal_Kelvin(){
+
+          let cel = document.getElementById('celsius').value
+            if(cel === ""){
+                alert('Campo em branco! Digite um valor')
+                return false
+            }
+            let calculo = document.getElementById('texto5').innerHTML = cel+273.15
 
         }
 
