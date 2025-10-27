@@ -9,7 +9,7 @@ function criar_janela001 (){
 
     })
 
-    janela.loadFile('index_conversor.html')
+    janela.loadFile('calc_notas.html')
 }
 
 

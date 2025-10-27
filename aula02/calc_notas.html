@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Notas</title>
+</head>
+<body>
+
+    <input type="number" id='nota1' placeholder="Digite a sua 1 Nota">
+       <input type="number" id='nota2' placeholder="Digite a sua 2 Nota">
+          <input type="number" id='nota3' placeholder="Digite a sua 3 Nota">
+             <input type="number" id='nota4' placeholder="Digite a sua 4 Nota">
+             <button id="calcular_notas" > Calcular Nota</button> <!-- aqui pode ter um acao do botao usando o onclik-->
+ <p id="valor1"></p>
+  
+<script>
+
+
+function  calcular_nota(){
+
+
+        let nota1 = Number (document.getElementById('nota1').value)
+        let nota2 = Number (document.getElementById('nota2').value)
+        let nota3 = Number (document.getElementById('nota3').value)
+        let nota4 = Number (document.getElementById('nota4').value)
+        let media = ((nota1+nota2+nota3+nota4)/4)
+
+
+      //  alert(media)
+
+        document.getElementById('valor1').innerHTML = `O Valor final de sua média é: ${media.toFixed(2)}`
+
+        
+
+
+}
+
+document.getElementById('calcular_notas').addEventListener('click', calcular_nota) // esse substitui o onclik
+
+</script>
+
+    
+</body>
+
+
+</html>

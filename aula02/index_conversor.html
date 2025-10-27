@@ -48,6 +48,10 @@
     <br><br>
 
   <P id="valor1"> </P>
+  <p id="valor2"></p>
+  <p id="valor3"></p>
+  <p id="valor4"></p>
+  <p id="valor5"></p>
   <p id = ""></p>
 
   <script>
@@ -58,26 +62,54 @@
                 alert('Campo em branco! Digite um valor')
                 return false
             }
-            document.getElementById("valor1").innerHTML = `Resultado:  ${(dolar*5.424)}`
+            document.getElementById("valor1").innerHTML = `Resultado em Dolar:  ${(dolar/5.424).toFixed(2)}`
             
     }
 
      function conversor_euro(){
-
-        let euro = document.getElementById('valor2').value*6.353
+  
+      let euro = Number (document.getElementById('Valor_real').value)
+           if( euro === ""){
+                alert('Campo em branco! Digite um valor')
+                return false
+            }
+            document.getElementById("valor2").innerHTML = `Resultado em Euro:  ${(euro/6.353).toFixed(2)}`
+            
         
 
     }
 
       function conversor_peso(){
 
+         let peso = Number (document.getElementById('Valor_real').value)
+           if( peso === ""){
+                alert('Campo em branco! Digite um valor')
+                return false
+            }
+            document.getElementById("valor3").innerHTML = `Resultado em Peso:  ${(peso/0.0042).toFixed(2)}`
+            
+
     }
 
      function conversor_libra(){
+       let libra = Number (document.getElementById('Valor_real').value)
+           if( libra === ""){
+                alert('Campo em branco! Digite um valor')
+                return false
+            }
+            document.getElementById("valor4").innerHTML = `Resultado em Libra:  ${(libra/0.0042).toFixed(2)}`
+            
 
     }
 
      function conversor_franco(){
+
+             let franco = Number (document.getElementById('Valor_real').value)
+           if( franco === ""){
+                alert('Campo em branco! Digite um valor')
+                return false
+            }
+            document.getElementById("valor5").innerHTML = `Resultado em Franco:  ${(franco/6.753).toFixed(2)}`
 
     }
 
