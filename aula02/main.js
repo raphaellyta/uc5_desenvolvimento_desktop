@@ -20,6 +20,6 @@ app.whenReady().then(()=> {
     console.log('Excutando')
 })
 
-catch((erro) =>{
-    console.error(erro)
-)}
+// catch((erro) =>{
+//     console.error(erro)
+// )}
