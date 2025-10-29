@@ -1,39 +1,39 @@
-import {app,BrowserWindow} from 'electron'
-import path from 'node path'
-import {fileURLToPath, fileURLtOpath} from'node:url'
+import {app, BrowserWindow, nativeTheme} from 'electron'
+import path from 'node:path'
+import {fileURLToPath} from 'node:url'
 
+const __filename = fileURLToPath(import.meta.url) // file:////c:/senac
+const __dirname = path.dirname(__filename) // c:/senac/
 
- const __filename= fileURLToPath(import.meta.url)//
- //console.log (__filename)
- const __dirname = path.__dirname(__filename)
- //console.log(__dirname)
-
-
-function criar_janela001 (){
-    const janela = new BrowserWindow ({
-       width: "800px",
-       height: "800px",
-       title: "Aplicação Desktop",
-
-       webPreferences:{
-
-       }
- 
-
+function criarJanela(){
+    nativeTheme.themeSource = 'light' // modo claro/escuro da janela
+    const janela = new BrowserWindow({ 
+        width: 800, height: 800,
+        title: "Aplicação Desktop",       
+        webPreferences: {
+            nodeIntegration: false,           
+            contextIsolation: true,
+            devTools: true,
+            preload: path.join(__dirname,'preload.js'),
+            sandbox: false
+        }
     })
-
-    janela.loadFile('./front_exercicio/advinhacao_numero.html')
-    janela.removeMenu()
+    janela.loadFile('index.html') 
     janela.webContents.openDevTools()
+    janela.removeMenu()
 }
 
-
-
-app.whenReady().then(()=> {
-    criar_janela001()
-    console.log('Excutando')
+app.whenReady().then(() => { 
+        criarJanela()
+})
+  
+app.on('window-all-closed', () => {
+    if(process.platform !== 'darwin'){
+        app.quit()
+    }
 })
 
-// catch((erro) =>{
-//     console.error(erro)
-// )}
+
+
+
+

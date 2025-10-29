@@ -1,5 +1,5 @@
 {
-  "name": "aula02",
+  "name": "aula2",
   "version": "1.0.0",
   "main": "main.js",
   "type": "module",
@@ -8,10 +8,10 @@
     "start": "electron main.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Aparecida",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "electron": "^38.4.0"
+    "electron": "^39.0.0"
   }
 }
