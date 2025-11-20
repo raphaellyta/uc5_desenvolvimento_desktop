@@ -2,7 +2,7 @@ import {app, BrowserWindow, nativeTheme} from 'electron'
 
 
 
-function CriarJanela (){
+function criarJanela (){
 
  nativeTheme.thrmeSoyurce ='light'
 
@@ -12,10 +12,34 @@ function CriarJanela (){
         width: 800,
         height: 600,
         resizable: false,
+    })
 
         
 
 
-    })
-
+   janela.loadFile('index.html') 
+    janela.webContents.openDevTools()
+    janela.removeMenu()
 }
+
+app.whenReady().then(() => { 
+        criarJanela()
+})
+  
+app.on('window-all-closed', () => {
+    if(process.platform !== 'darwin'){
+        app.quit()
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+

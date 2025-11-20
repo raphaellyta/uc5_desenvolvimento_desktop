@@ -9,7 +9,69 @@
 
     <h1>JOGO DE ADVINHAR O NÚMERO</h1>
       <label for="valor"> Insira  o número</label>
+      <br>
     <input type="text" id ="ins_valor" placeholder="">
     <br><br>
+
+<button id ="verificar" onclick='verificar()'> Verificar </button>
+<button id="limpar" onclick='limpar()'>Limpar</button>
+<button id = "dica" onclick='dica()'> Dica</button>
+
+<p id="text1"></p>
+<p id="text2"></p>
+
+<script>
+  let numeroaleatorio = Math.floor(Math.random()*10)
+  console.log(numeroaleatorio)
+    let salvar = document.getElementById('ins_valor').value
+
+
+function verificar(){
+  
+
+
+  if(numeroaleatorio === salvar){
+
+    document.getElementById('text1').innerHTML = 'Acertou'
+
+  } else{
+
+    document.getElementById('text2').innerHTML = 'Errou'
+
+  }
+
+}
+
+function limpar(){
+
+     document.getElementById('ins_valor').value = ""
+
+}
+
+function dica(){
+
+
+
+  let salvar_numero 
+
+  if(salvar> numeroaleatorio){
+  document.getElementById('Dica: O número é MAIOR!')
+    
+
+  }else{
+
+    document.getElementById('Dica: O número e MENOR')
+  }
+
+}
+
+
+
+
+
+</script>
+ 
+
+
 </body>
 </html>
