@@ -8,10 +8,11 @@
 <body>
 
     <h1>JOGO DE ADVINHAR O NÚMERO</h1>
-      <label for="valor"> Insira  o número</label>
-      <br>
-    <input type="text" id ="ins_valor" placeholder="">
-    <br><br>
+
+
+    <label > Insira  o número: </label><br>
+    <input type="text" id ="ins_valor" placeholder=""><br><br>
+
 
 <button id ="verificar" onclick='verificar()'> Verificar </button>
 <button id="limpar" onclick='limpar()'>Limpar</button>
@@ -21,47 +22,60 @@
 <p id="text2"></p>
 
 <script>
-  let numeroaleatorio = Math.floor(Math.random()*10)
-  console.log(numeroaleatorio)
-    let salvar = document.getElementById('ins_valor').value
+
+let numeroaleatorio = Math.floor(Math.random()*10)+1
+console.log(numeroaleatorio)
+
+
+let errouUmaVez = false // AQUI VAI SER UMA FLAG QUE VAI CONTROLAR SE A DICA VAI APARECER OU NAO :SE NAO ERRAR CONT FALSE, SE ERRAR FICA TRUE
+
+
 
 
 function verificar(){
   
+let salvar = document.getElementById('ins_valor').value
 
 
   if(numeroaleatorio === salvar){
 
     document.getElementById('text1').innerHTML = 'Acertou'
+    document.getElementById('text2').innerHTML = '' //se havia mensagem de erro anterior, remove).Por que fazemos isso: para não manter a mensagem “Errou” quando o usuário já acertou — fica mais limpo visualmente.
+    document.getElementById('dica').style.display = 'none' // OCULTA O ELEMENTO DA DICA, JA QUE O USUARIO ACERTOU
 
   } else{
 
     document.getElementById('text2').innerHTML = 'Errou'
 
+  if (!errouUmaVez) {
+    document.getElementById('dica').style.display = 'inline' //ele aparece “em linha” (como um <span>)
+    errouUmaVez = true
   }
 
-}
+}}
 
 function limpar(){
 
-     document.getElementById('ins_valor').value = ""
+     document.getElementById('ins_valor').value =""
+     document.getElementById('text1').innerHTML=""
+     document.getElementById('text2').innerHTML=""
 
 }
 
 function dica(){
 
 
+let salvar = document.getElementById('ins_valor').value
 
-  let salvar_numero 
 
-  if(salvar> numeroaleatorio){
-  document.getElementById('Dica: O número é MAIOR!')
-    
 
-  }else{
-
-    document.getElementById('Dica: O número e MENOR')
+  if(salvar < numeroaleatorio){
+  
+     document.getElementById('text1').innerHTML = "Dica: o número é MAIOR"
+  } else {
+    document.getElementById('text1').innerHTML = "Dica: o número é MENOR"
   }
+
 
 }
 
